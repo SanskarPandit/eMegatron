@@ -8,6 +8,24 @@
       "expo-router"
     ],
     "name": "eMegatron",
-    "slug": "eMegatron"
+    "slug": "eMegatron",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splashScreen.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffff"
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "a161612b-8793-464e-83f7-a95784d23178"
+      }
+    },
+    "android": {
+      "package": "com.sanskarpandit.eMegatron"
+
+    }
   }
 }
