@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "243461536043",
+    "project_id": "emegatron-8bb8f",
+    "storage_bucket": "emegatron-8bb8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243461536043:android:b19199fc8adfc0a3386d6e",
+        "android_client_info": {
+          "package_name": "com.sanskarpandit.eMegatron"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFmrtcrAgDjYBKSVnF-uLtfOhXLpWv8aQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

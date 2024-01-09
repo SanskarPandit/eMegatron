@@ -3,18 +3,32 @@ import { StyleSheet } from "react-native";
 import { COLORS, FONT, SIZES } from "../../../constants";
 
 const styles = StyleSheet.create({
+  iconPadding: { paddingTop: 0.3 },
   container: {
+    marginTop: SIZES.small,
     width: "100%",
   },
+  description: {
+    fontFamily: FONT.regular,
+    fontSize: SIZES.medium,
+    color: "#fff",
+  },
+
   userName: {
     fontFamily: FONT.regular,
     fontSize: SIZES.large,
     color: COLORS.secondary,
   },
+  welcomeText: {
+    fontSize: 15,
+    marginTop: 9,
+    color: "#545454",
+    fontFamily: FONT.medium,
+  },
   welcomeMessage: {
+    color: "#202244",
     fontFamily: FONT.bold,
-    fontSize: SIZES.xLarge,
-    color: COLORS.primary,
+    fontSize: 30,
     marginTop: 2,
   },
   searchContainer: {
@@ -26,7 +40,7 @@ const styles = StyleSheet.create({
   },
   searchWrapper: {
     flex: 1,
-    backgroundColor: COLORS.white,
+    backgroundColor: "white",
     marginRight: SIZES.small,
     justifyContent: "center",
     alignItems: "center",
@@ -34,38 +48,111 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   searchInput: {
-    fontFamily: FONT.regular,
+    fontSize: SIZES.medium,
+    flex: 1,
+    fontFamily: FONT.medium,
     width: "100%",
     height: "100%",
-    paddingHorizontal: SIZES.medium,
+    paddingHorizontal: SIZES.xxLarge,
+    bottom: "20%",
+    left: "3%",
   },
-  searchBtn: {
-    width: 50,
-    height: "100%",
+  filterBtn: {
+    width: 45,
+    height: "80%",
     backgroundColor: COLORS.tertiary,
     borderRadius: SIZES.medium,
     justifyContent: "center",
     alignItems: "center",
   },
   searchBtnImage: {
-    width: "50%",
-    height: "50%",
+    width: "45%",
+    height: "45%",
+    tintColor: "#000",
+    right: "44%",
+    top: "30%",
+  },
+  offerCard: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 25,
+    backgroundColor: "#EF383D",
+    padding: 5,
+    borderRadius: 20,
+    width: "80%",
+    marginLeft: "10%",
+  },
+  cardHeading: {
+    fontFamily: FONT.bold,
+    fontSize: 25,
+    color: COLORS.white,
+    marginTop: 2,
+    marginBottom: 12,
+  },
+  cardTxt: {
+    fontFamily: FONT.bold,
+    fontSize: 20,
+    color: COLORS.white,
+    marginTop: 2,
+  },
+  filterBtnImage: {
+    width: 30,
+    height: 30,
     tintColor: COLORS.white,
   },
+  cardSlider: {
+    flexDirection: "row",
+    marginTop: SIZES.xLarge,
+    height: 10,
+    backgroundColor: "#FAC840",
+    width: 20,
+    borderRadius: 5,
+    marginBottom: 5,
+  },
+  menuTabsContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    marginTop: SIZES.medium,
+    flexDirection: "row",
+  },
+  menuSection: {
+    marginTop: SIZES.xxLarge,
+    marginBottom: SIZES.large,
+    backgroundColor: "#ffff",
+    padding: SIZES.xLarge,
+    borderRadius: SIZES.medium,
+    width: "100%",
+    paddingTop: 0.5,
+  },
+  menutab: (activeStatus) => ({
+    paddingVertical: SIZES.small / 2,
+    paddingHorizontal: SIZES.xxLarge,
+    borderRadius: 10,
+    borderBottomWidth: activeStatus === 0 ? 1 : 0,
+    borderColor: activeStatus === 0 ? "#167F71" : COLORS.gray2,
+  }),
+  menutabText: (activeStatus) => ({
+    fontFamily: FONT.bold,
+    fontSize: SIZES.large,
+    color: activeStatus === 0 ? "#167F71" : COLORS.gray2,
+  }),
+
   tabsContainer: {
     width: "100%",
     marginTop: SIZES.medium,
   },
   tab: (activeJobType, item) => ({
     paddingVertical: SIZES.small / 2,
-    paddingHorizontal: SIZES.small,
+    paddingHorizontal: SIZES.medium,
     borderRadius: SIZES.medium,
     borderWidth: 1,
-    borderColor: activeJobType === item ? COLORS.secondary : COLORS.gray2,
+    backgroundColor: activeJobType === item ? "#167F71" : "#FCF4F5",
+    borderColor: activeJobType === item ? "#167F71" : "#FCF4F5",
   }),
   tabText: (activeJobType, item) => ({
     fontFamily: FONT.medium,
-    color: activeJobType === item ? COLORS.secondary : COLORS.gray2,
+    color: activeJobType === item ? "#FFFFFF" : "#000",
   }),
 });
 
