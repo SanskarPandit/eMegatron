@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 import { COLORS, FONT, SIZES } from "../../../constants";
 
 const styles = StyleSheet.create({
+  body: { padding: SIZES.medium, backgroundColor: "#FCF4F5" },
   iconPadding: { paddingTop: 0.3 },
   container: {
     marginTop: SIZES.small,
@@ -154,6 +155,29 @@ const styles = StyleSheet.create({
     fontFamily: FONT.medium,
     color: activeJobType === item ? "#FFFFFF" : "#000",
   }),
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  headerTitle: {
+    fontSize: SIZES.xLarge,
+    fontFamily: FONT.medium,
+    color: COLORS.primary,
+  },
+  headerBtn: {
+    fontSize: 15,
+    fontFamily: FONT.medium,
+    color: "#EF383D",
+  },
+  cardsContainer: {
+    marginTop: SIZES.medium,
+  },
+  heading: {
+    fontSize: 20,
+    fontFamily: FONT.medium,
+    color: COLORS.primary,
+  },
 });
 
 export default styles;
