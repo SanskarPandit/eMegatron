@@ -7,6 +7,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import styles from "../styles/search";
+import Profile from "../components/profile/Profile";
 
 const home = "Home";
 const myCourses = "My Courses";
@@ -14,6 +15,9 @@ const jobs = "Jobs";
 const profile = "Profile";
 const Tab = createBottomTabNavigator();
 const Home = () => {
+  const [activeCourse, setActiveCourse] = useState(0);
+  const [activeJob, setActiveJob] = useState(1);
+
   return (
     <SafeAreaView style={styles.androidSafeArea}>
       <NavigationContainer independent={true}>
@@ -33,7 +37,7 @@ const Home = () => {
                   ? "chatbubble-ellipses"
                   : "chatbubble-ellipses-outline";
               } else if (rn === profile) {
-                iconName = focused ? "ios-profile" : "ios-profile-outline";
+                iconName = focused ? "ios-person-sharp" : "ios-person-outline";
               }
               return (
                 <Ionic
@@ -46,7 +50,7 @@ const Home = () => {
             tabBarActiveTintColor: "black",
             tabBarInactiveTintColor: "black",
             tabBarStyle: {
-              backgroundColor: "#FCF4F5",
+              backgroundColor: activeCourse == 0 ? "#FCF4F5" : "#F2F8FF",
               paddingBottom: 2,
               paddingTop: 5,
               height: 50,
@@ -75,6 +79,13 @@ const Home = () => {
             }}
             name={jobs}
             component={Jobs}
+          />
+          <Tab.Screen
+            options={{
+              headerShown: false,
+            }}
+            name={profile}
+            component={Profile}
           />
         </Tab.Navigator>
       </NavigationContainer>

@@ -15,6 +15,7 @@ import styles from "./welcome.style";
 import { COLORS, icons, SIZES } from "../../../constants";
 import jobStyle from "../jobs/jobs.style"
 import CourseCard from "../../common/cards/courses/CoursesCard";
+
 import firestore from '@react-native-firebase/firestore';
 const Welcome = () => {
     const [loading, setLoading] = useState(true)
@@ -172,95 +173,97 @@ const Welcome = () => {
                 </View>
             ) : ("")}
             {/* Jobs Section */}
+
+
             {activeJob == 0 ? (
-                <View style={styles.body}>
-                    <View style={styles.container}>
-                        <Text style={styles.welcomeMessage}>Hi, Arjun A. Vyas</Text>
-                        <Text style={styles.welcomeText}>
-                            What would you like to learn Today?
+                <View style={jobStyle.body}>
+                    <View style={jobStyle.container}>
+                        <Text style={jobStyle.welcomeMessage}>Hi, Arjun A. Vyas</Text>
+                        <Text style={jobStyle.welcomeText}>
+                            Find Your Great Job
                         </Text>
-                        <Text style={styles.welcomeText}>Search Below !</Text>
+
                     </View>
 
-                    <View style={styles.searchContainer}>
-                        <View style={styles.searchWrapper}>
+                    <View style={jobStyle.searchContainer}>
+                        <View style={jobStyle.searchWrapper}>
                             <Image
                                 source={icons.search}
                                 resizeMode="contain"
-                                style={styles.searchBtnImage}
+                                style={jobStyle.searchBtnImage}
                             />
                             <TextInput
-                                style={styles.searchInput}
+                                style={jobStyle.searchInput}
                                 value=""
                                 onChange={() => { }}
                                 placeholder="What are you looking for?"
                             />
                         </View>
-                        <TouchableOpacity style={styles.filterBtn} onPress={() => { }}>
+                        <TouchableOpacity style={jobStyle.filterBtn} onPress={() => { }}>
                             <Image
                                 source={icons.filter}
                                 resizeMode="contain"
-                                style={styles.filterBtnImage}
+                                style={jobStyle.filterBtnImage}
 
                             />
                         </TouchableOpacity>
                     </View>
 
-                    <View style={styles.offerCard}>
-                        <Text style={styles.cardTxt}>25% OFF*</Text>
-                        <Text style={styles.cardHeading}>Today's Special</Text>
-                        <Text style={styles.description}>Get a Discount for Every</Text>
-                        <Text style={styles.description}>Course Order only Valid for</Text>
-                        <Text style={styles.description}>Today..!</Text>
+                    <View style={jobStyle.offerCard}>
+                        <Text style={jobStyle.cardTxt}>25% OFF*</Text>
+                        <Text style={jobStyle.cardHeading}>Today's Special</Text>
+                        <Text style={jobStyle.description}>Get a Discount for Every</Text>
+                        <Text style={jobStyle.description}>Course Order only Valid for</Text>
+                        <Text style={jobStyle.description}>Today..!</Text>
                         <View style={styles.cardSlider}></View>
                     </View>
 
 
-                    <View style={styles.menuSection}>
-                        <View style={styles.menuTabsContainer}>
+                    <View style={jobStyle.menuSection}>
+                        <View style={jobStyle.menuTabsContainer}>
                             <TouchableOpacity
-                                style={styles.menutab(activeCourse)}
+                                style={jobStyle.menutab(activeCourse)}
                                 onPress={() => {
                                     setActiveCourse(0);
                                     setActiveJob(1);
                                 }}
                             >
-                                <Text style={styles.menutabText(activeCourse)}>Courses</Text>
+                                <Text style={jobStyle.menutabText(activeCourse)}>Courses</Text>
                             </TouchableOpacity>
 
                             <TouchableOpacity
-                                style={styles.menutab(activeJob)}
+                                style={jobStyle.menutab(activeJob)}
                                 onPress={() => {
                                     setActiveJob(0);
                                     setActiveCourse(1);
                                 }}
                             >
-                                <Text style={styles.menutabText(activeJob)}>Jobs</Text>
+                                <Text style={jobStyle.menutabText(activeJob)}>Jobs</Text>
                             </TouchableOpacity>
                         </View>
 
                         <View style={{ marginTop: SIZES.large }}>
 
-                            <View style={styles.header}>
-                                <Text style={styles.heading}>Popular Courses</Text>
+                            <View style={jobStyle.header}>
+                                <Text style={jobStyle.heading}>Recommended For You</Text>
                                 <TouchableOpacity style={{}} >
-                                    <Text style={styles.headerBtn}>SEE ALL {">"}</Text>
+                                    <Text style={jobStyle.headerBtn}>SEE ALL {">"}</Text>
                                 </TouchableOpacity>
                             </View>
 
                         </View>
                         <View>
-                            <View style={styles.tabsContainer}>
+                            <View style={jobStyle.tabsContainer}>
                                 <FlatList
-                                    data={courseType}
+                                    data={jobType}
                                     renderItem={({ item }) => (
                                         <TouchableOpacity
-                                            style={styles.tab(activeCourseType, item)}
+                                            style={jobStyle.tab(activeCourseType, item)}
                                             onPress={() => {
                                                 setActiveCourseType(item);
                                             }}
                                         >
-                                            <Text style={styles.tabText(activeCourseType, item)}>
+                                            <Text style={jobStyle.tabText(activeCourseType, item)}>
                                                 {item}
                                             </Text>
                                         </TouchableOpacity>

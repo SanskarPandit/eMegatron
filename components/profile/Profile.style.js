@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native";
 
-import { FONT, SIZES, COLORS } from "../../../constants";
+import { COLORS, FONT, SIZES } from "../../../constants";
 
 const styles = StyleSheet.create({
-  body: { padding: SIZES.medium, backgroundColor: "#F2F8FF" },
+  body: { padding: SIZES.medium, backgroundColor: "#FCF4F5" },
   iconPadding: { paddingTop: 0.3 },
   container: {
     marginTop: SIZES.small,
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   filterBtn: {
     width: 45,
     height: "80%",
-    backgroundColor: "#007AFF",
+    backgroundColor: COLORS.tertiary,
     borderRadius: SIZES.medium,
     justifyContent: "center",
     alignItems: "center",
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 25,
-    backgroundColor: "#007AFF",
+    backgroundColor: "#EF383D",
     padding: 5,
     borderRadius: 20,
     width: "80%",
@@ -148,8 +148,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: SIZES.medium,
     borderRadius: SIZES.medium,
     borderWidth: 1,
-    backgroundColor: activeJobType === item ? "#167F71" : "#F2F8FF",
-    borderColor: activeJobType === item ? "#167F71" : "#F2F8FF",
+    backgroundColor: activeJobType === item ? "#167F71" : "#FCF4F5",
+    borderColor: activeJobType === item ? "#167F71" : "#FCF4F5",
   }),
   tabText: (activeJobType, item) => ({
     fontFamily: FONT.medium,
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
   headerBtn: {
     fontSize: 15,
     fontFamily: FONT.medium,
-    color: "#007AFF",
+    color: "#EF383D",
   },
   cardsContainer: {
     marginTop: SIZES.medium,

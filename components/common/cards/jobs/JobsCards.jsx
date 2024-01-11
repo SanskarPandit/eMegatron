@@ -1,27 +1,29 @@
+import { View, Text, TouchableOpacity, Image } from "react-native";
+import styles from "../../cards/courses/CoursesCards.style"
+import { AirbnbRating } from 'react-native-ratings';
 
-import { Text, TouchableOpacity, Image } from "react-native";
-
-import styles from "./jobcard.style.js";
-
-const JobsCards = () => {
+const JobsCards = ({ item }) => {
   return (
-    <TouchableOpacity
-      style={styles.container(selectedJob, item)}
-      onPress={() => {
-        handleCardPress(item);
-      }}
-    >
-      {/* <TouchableOpacity style={styles.logoContainer(selectedJob, item)}>
-        <Image 
-          source={{ uri: item.employer_logo }}
-          resizeMode="contain"
-          style={styles.logoImage}
-        />
+    <View >
+      <TouchableOpacity style={[styles.container, styles.card]} onPress={() => { }}>
+        <Image source={{ uri: item.imageURL }} style={styles.cardImage} />
+        <View style={styles.infoContainer}>
+          <Text style={styles.courseName}>{item.title}</Text>
+          <View style={styles.infoWrapper}>
+            <Text style={styles.price}>₹{item.price}</Text>
+            <Text style={styles.partition}>|</Text>
+            <AirbnbRating
+              count={1}
+              size={15}
+              showRating={false}
+            />
+            <Text style={styles.companyName}>{item.rating}</Text>
+            <Text style={styles.partition}>|</Text>
+            <Text style={styles.companyName}>{item.students} Std</Text>
+          </View>
+        </View>
       </TouchableOpacity>
-      <Text style={styles.companyName} numberOfLines={1}>
-        {item.employer_name}
-      </Text> */}
-    </TouchableOpacity>
+    </View>
   );
 };
 

@@ -7,7 +7,7 @@ import { COLORS, icons, SIZES } from "../../../constants";
 import CourseCard from "../../common/cards/courses/CoursesCard";
 import firestore from '@react-native-firebase/firestore';
 // const router = useRouter();
-const Courses = () => {
+const Courses = ({ navigation }) => {
   const [loading, setLoading] = useState(true)
   const [course, setCourse] = useState([]);
   const [activeCourseType, setActiveCourseType] = useState("All");
