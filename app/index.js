@@ -8,16 +8,15 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import styles from "../styles/search";
 import Profile from "../components/profile/Profile";
+import SignUp from "../components/signUp/SignUp";
 
 const home = "Home";
 const myCourses = "My Courses";
 const jobs = "Jobs";
 const profile = "Profile";
+const filter = "Filter";
 const Tab = createBottomTabNavigator();
 const Home = () => {
-  const [activeCourse, setActiveCourse] = useState(0);
-  const [activeJob, setActiveJob] = useState(1);
-
   return (
     <SafeAreaView style={styles.androidSafeArea}>
       <NavigationContainer independent={true}>
@@ -50,7 +49,7 @@ const Home = () => {
             tabBarActiveTintColor: "black",
             tabBarInactiveTintColor: "black",
             tabBarStyle: {
-              backgroundColor: activeCourse == 0 ? "#FCF4F5" : "#F2F8FF",
+              backgroundColor: "#FCF4F5",
               paddingBottom: 2,
               paddingTop: 5,
               height: 50,
@@ -75,7 +74,8 @@ const Home = () => {
           />
           <Tab.Screen
             options={{
-              headerShown: false, // Set headerShown to false to hide the header for this screen
+              headerShown: false,
+              tabBarStyle: { backgroundColor: "#F2F8FF" }, // Set headerShown to false to hide the header for this screen
             }}
             name={jobs}
             component={Jobs}
@@ -86,6 +86,13 @@ const Home = () => {
             }}
             name={profile}
             component={Profile}
+          />
+          <Tab.Screen
+            options={{
+              headerShown: false,
+            }}
+            name={"SignUp"}
+            component={SignUp}
           />
         </Tab.Navigator>
       </NavigationContainer>

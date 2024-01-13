@@ -1,13 +1,14 @@
 import { StyleSheet } from "react-native";
 
-import { COLORS, FONT, SIZES } from "../../../constants";
+import { COLORS, FONT, SIZES } from "../../constants";
 
 const styles = StyleSheet.create({
-  body: { padding: SIZES.medium, backgroundColor: "#FCF4F5" },
+  body: { padding: SIZES.large, backgroundColor: "#FCF4F5" },
   iconPadding: { paddingTop: 0.3 },
   container: {
-    marginTop: SIZES.small,
+    marginTop: SIZES.large,
     width: "100%",
+    height: "100%",
   },
   description: {
     fontFamily: FONT.regular,
@@ -31,13 +32,15 @@ const styles = StyleSheet.create({
     fontFamily: FONT.bold,
     fontSize: 30,
     marginTop: 2,
+    marginLeft: SIZES.small,
   },
   searchContainer: {
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",
-    marginTop: SIZES.large,
-    height: 50,
+    marginTop: SIZES.xLarge,
+    height: 56,
+    paddingHorizontal: SIZES.xLarge,
   },
   searchWrapper: {
     flex: 1,
@@ -54,129 +57,99 @@ const styles = StyleSheet.create({
     fontFamily: FONT.medium,
     width: "100%",
     height: "100%",
+    paddingHorizontal: SIZES.large,
+    alignItems: "center",
+    left: "2%",
+  },
+  dateOfBirth: {
+    fontSize: SIZES.medium,
+    flex: 1,
+    fontFamily: FONT.medium,
+    width: "100%",
+    height: "100%",
     paddingHorizontal: SIZES.xxLarge,
     bottom: "20%",
     left: "3%",
   },
-  filterBtn: {
-    width: 45,
-    height: "80%",
-    backgroundColor: COLORS.tertiary,
-    borderRadius: SIZES.medium,
-    justifyContent: "center",
+  phoneInput: {
+    fontSize: SIZES.medium,
+    flex: 1,
+    fontFamily: FONT.medium,
+    width: "100%",
+    height: "100%",
+
     alignItems: "center",
+    left: "2%",
+    right: "2%",
   },
   searchBtnImage: {
     width: "45%",
     height: "45%",
-    tintColor: "#000",
     right: "44%",
     top: "30%",
+    resizeMode: "contain",
   },
-  offerCard: {
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 25,
-    backgroundColor: "#EF383D",
-    padding: 5,
-    borderRadius: 20,
-    width: "80%",
-    marginLeft: "10%",
-  },
-  cardHeading: {
-    fontFamily: FONT.bold,
-    fontSize: 25,
-    color: COLORS.white,
-    marginTop: 2,
-    marginBottom: 12,
-  },
-  cardTxt: {
-    fontFamily: FONT.bold,
-    fontSize: 20,
-    color: COLORS.white,
-    marginTop: 2,
-  },
-  filterBtnImage: {
-    width: 30,
-    height: 30,
-    tintColor: COLORS.white,
-  },
-  cardSlider: {
-    flexDirection: "row",
-    marginTop: SIZES.xLarge,
-    height: 10,
-    backgroundColor: "#FAC840",
-    width: 20,
-    borderRadius: 5,
-    marginBottom: 5,
-  },
-  menuTabsContainer: {
-    alignItems: "center",
-    justifyContent: "center",
-    width: "100%",
-    marginTop: SIZES.medium,
-    flexDirection: "row",
-  },
-  menuSection: {
-    marginTop: SIZES.xxLarge,
-    marginBottom: SIZES.large,
-    backgroundColor: "#ffff",
-    padding: SIZES.xLarge,
-    borderRadius: SIZES.medium,
-    width: "100%",
-    paddingTop: 0.5,
-  },
-  menutab: (activeStatus) => ({
-    paddingVertical: SIZES.small / 2,
-    paddingHorizontal: SIZES.xxLarge,
-    borderRadius: 10,
-    borderBottomWidth: activeStatus === 0 ? 1 : 0,
-    borderColor: activeStatus === 0 ? "#167F71" : COLORS.gray2,
-  }),
-  menutabText: (activeStatus) => ({
-    fontFamily: FONT.bold,
-    fontSize: SIZES.large,
-    color: activeStatus === 0 ? "#167F71" : COLORS.gray2,
-  }),
 
-  tabsContainer: {
-    width: "100%",
-    marginTop: SIZES.medium,
+  filterBtnImage: {
+    width: 35,
+    height: 35,
+    resizeMode: "contain",
+    left: "30%",
+    bottom: SIZES.small,
   },
-  tab: (activeJobType, item) => ({
-    paddingVertical: SIZES.small / 2,
-    paddingHorizontal: SIZES.medium,
+
+  phoneInputWrapper: {
+    backgroundColor: "#fff",
     borderRadius: SIZES.medium,
-    borderWidth: 1,
-    backgroundColor: activeJobType === item ? "#167F71" : "#FCF4F5",
-    borderColor: activeJobType === item ? "#167F71" : "#FCF4F5",
-  }),
-  tabText: (activeJobType, item) => ({
-    fontFamily: FONT.medium,
-    color: activeJobType === item ? "#FFFFFF" : "#000",
-  }),
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+  },
+  dropdown: {
+    margin: 16,
+    height: 50,
+
+    backgroundColor: "#fff",
+    borderRadius: 15,
+  },
+  icon: {
+    marginRight: 5,
+    backgroundColor: "#fff",
+  },
+  placeholderStyle: {
+    color: "#000",
+    fontSize: 16,
+    backgroundColor: "#fff",
+  },
+  selectedTextStyle: {
+    fontSize: 16,
+    borderRadius: 10,
+    backgroundColor: "#fff",
+  },
+  iconStyle: {
+    width: 20,
+    height: 20,
+    right: 20,
+  },
+  inputSearchStyle: {
+    height: 50,
+    fontSize: 16,
+    backgroundColor: "#fff",
+  },
+
+  filterBtn: {
+    width: "80%",
+    backgroundColor: "#EF383D",
+    borderRadius: SIZES.large,
+    justifyContent: "center",
     alignItems: "center",
+    marginTop: SIZES.xxLarge,
+    marginHorizontal: SIZES.xxLarge,
   },
-  headerTitle: {
-    fontSize: SIZES.xLarge,
-    fontFamily: FONT.medium,
-    color: COLORS.primary,
-  },
-  headerBtn: {
-    fontSize: 15,
-    fontFamily: FONT.medium,
-    color: "#EF383D",
-  },
-  cardsContainer: {
-    marginTop: SIZES.medium,
-  },
-  heading: {
-    fontSize: 20,
-    fontFamily: FONT.medium,
-    color: COLORS.primary,
+  updateText: {
+    color: "white",
+    fontFamily: FONT.regular,
+    fontSize: SIZES.large,
+    color: COLORS.white,
+    // marginTop: 10,
+    top: SIZES.medium,
   },
 });
 

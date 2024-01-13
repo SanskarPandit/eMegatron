@@ -10,6 +10,9 @@ import chevronLeft from "../assets/icons/chevron-left.png";
 import chevronRight from "../assets/icons/chevron-right.png";
 import NOTIFICATIONS from "../assets/icons/NOTIFICATIONS.png";
 import Circle from "../assets/icons/Circle.png";
+import Amazon from "../assets/icons/amazon.png";
+import Calendar from "../assets/icons/calendar.png";
+import Email from "../assets/icons/email.png";
 export default {
   heart,
   menu,
@@ -23,4 +26,7 @@ export default {
   chevronRight,
   NOTIFICATIONS,
   Circle,
+  Amazon,
+  Calendar,
+  Email,
 };

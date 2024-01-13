@@ -17,7 +17,8 @@ import jobStyle from "../jobs/jobs.style"
 import CourseCard from "../../common/cards/courses/CoursesCard";
 
 import firestore from '@react-native-firebase/firestore';
-const Welcome = () => {
+import JobsCards from "../../common/cards/jobs/JobsCards";
+const Welcome = ({ navigation }) => {
     const [loading, setLoading] = useState(true)
     const [activeCourse, setActiveCourse] = useState(0);
     const [activeJob, setActiveJob] = useState(1);
@@ -53,6 +54,26 @@ const Welcome = () => {
         // Unsubscribe from events when no longer in use
         return () => subscriber();
     }, []);
+    useEffect(() => {
+        const subscriber = firestore()
+            .collection('job_cards')
+            .onSnapshot(querySnapshot => {
+                const job = [];
+
+                querySnapshot.forEach(documentSnapshot => {
+                    job.push({
+                        ...documentSnapshot.data(),
+                        key: documentSnapshot.id,
+                    });
+                });
+
+                setJob(job);
+                setLoading(false);
+            });
+
+        // Unsubscribe from events when no longer in use
+        return () => subscriber();
+    }, []);
     if (loading) {
         return <ActivityIndicator />;
     }
@@ -67,7 +88,7 @@ const Welcome = () => {
                         <Text style={styles.welcomeText}>
                             What would you like to learn Today?
                         </Text>
-                        <Text style={styles.welcomeText}>Search Below !</Text>
+                        {/* <Text style={styles.welcomeText}>Search Below !</Text> */}
                     </View>
 
                     <View style={styles.searchContainer}>
@@ -84,7 +105,7 @@ const Welcome = () => {
                                 placeholder="What are you looking for?"
                             />
                         </View>
-                        <TouchableOpacity style={styles.filterBtn} onPress={() => { }}>
+                        <TouchableOpacity style={styles.filterBtn} onPress={() => { navigation.navigate("SignUp") }}>
                             <Image
                                 source={icons.filter}
                                 resizeMode="contain"
@@ -131,7 +152,7 @@ const Welcome = () => {
 
                             <View style={styles.header}>
                                 <Text style={styles.heading}>Popular Courses</Text>
-                                <TouchableOpacity style={{}} >
+                                <TouchableOpacity style={{}} onPress={() => navigation.navigate("My Courses")} >
                                     <Text style={styles.headerBtn}>SEE ALL {">"}</Text>
                                 </TouchableOpacity>
                             </View>
@@ -180,7 +201,7 @@ const Welcome = () => {
                     <View style={jobStyle.container}>
                         <Text style={jobStyle.welcomeMessage}>Hi, Arjun A. Vyas</Text>
                         <Text style={jobStyle.welcomeText}>
-                            Find Your Great Job
+                            Find Your Great Job..!
                         </Text>
 
                     </View>
@@ -246,7 +267,7 @@ const Welcome = () => {
 
                             <View style={jobStyle.header}>
                                 <Text style={jobStyle.heading}>Recommended For You</Text>
-                                <TouchableOpacity style={{}} >
+                                <TouchableOpacity style={{}} onPress={() => navigation.navigate("Jobs")} >
                                     <Text style={jobStyle.headerBtn}>SEE ALL {">"}</Text>
                                 </TouchableOpacity>
                             </View>
@@ -276,9 +297,9 @@ const Welcome = () => {
                             </View>
                         </View>
                         <View>
-                            <FlatList data={course}
+                            <FlatList data={job}
                                 renderItem={({ item }) => (
-                                    <CourseCard item={item} />
+                                    <JobsCards item={item} />
                                 )}
                                 showsHorizontalScrollIndicator={false}
                                 horizontal

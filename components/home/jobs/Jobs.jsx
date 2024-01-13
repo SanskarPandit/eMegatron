@@ -1,30 +1,33 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, Image, TouchableOpacity, TextInput, ActivityIndicator, FlatList, ScrollView } from 'react-native'
+import { View, Text, Image, TouchableOpacity, TextInput, ActivityIndicator, FlatList, ScrollView, StyleSheet } from 'react-native'
 
 // import styles from './Courses.style'
 import styles from "./jobs.style";
-import { COLORS, icons, SIZES } from "../../../constants";
+import { COLORS, icons, SIZES, FONT } from "../../../constants";
 import CourseCard from "../../common/cards/courses/CoursesCard";
+import JobsCards from "../../common/cards/jobs/JobsCards"
 import firestore from '@react-native-firebase/firestore';
-
-const Jobs = () => {
+// import jobstyle from "../../common/cards/jobs/jobcard.style"
+import Ionic from "react-native-vector-icons/Ionicons";
+import { AirbnbRating } from 'react-native-ratings';
+const Jobs = ({ navigation }) => {
   const [loading, setLoading] = useState(true)
-  const [course, setCourse] = useState([]);
+  const [job, setJob] = useState([]);
   const [activeCourseType, setActiveCourseType] = useState("All");
   useEffect(() => {
     const subscriber = firestore()
-      .collection('jobs')
+      .collection('job_cards')
       .onSnapshot(querySnapshot => {
-        const course = [];
+        const job = [];
 
         querySnapshot.forEach(documentSnapshot => {
-          course.push({
+          job.push({
             ...documentSnapshot.data(),
             key: documentSnapshot.id,
           });
         });
 
-        setCourse(course);
+        setJob(job);
         setLoading(false);
       });
 
@@ -35,46 +38,53 @@ const Jobs = () => {
     return <ActivityIndicator />;
   }
   return (
-    <View style={{ padding: SIZES.medium, backgroundColor: "#F2F8FF" }}>
-      <View style={styles.container}>
-        <Text style={styles.welcomeMessage}>Jobs</Text>
+    <ScrollView>
+      <View style={{ padding: SIZES.medium, backgroundColor: "#F2F8FF" }}>
+        <View style={styles.container}>
+          <View style={{ display: 'flex', flexDirection: "row", alignContent: "space-between" }}>
 
-        <View style={styles.searchContainer}>
-          <View style={styles.searchWrapper}>
-            <Image
-              source={icons.search}
-              resizeMode="contain"
-              style={styles.searchBtnImage}
+            <Ionic
+              name="ios-arrow-back"
+              size={30}
+              onPress={() => navigation.navigate("Home")}
             />
-            <TextInput
-              style={styles.searchInput}
-              value=""
-              onChange={() => { }}
-              placeholder="What are you looking for?"
-            />
+            <Text style={styles.welcomeMessage}>Jobs</Text>
           </View>
-          <TouchableOpacity style={styles.filterBtn} onPress={() => { }}>
-            <Image
-              source={icons.filter}
-              resizeMode="contain"
-              style={styles.filterBtnImage}
+          <View style={styles.searchContainer}>
+            <View style={styles.searchWrapper}>
+              <Image
+                source={icons.search}
+                resizeMode="contain"
+                style={styles.searchBtnImage}
+              />
+              <TextInput
+                style={styles.searchInput}
+                value=""
+                onChange={() => { }}
+                placeholder="What are you looking for?"
+              />
+            </View>
+            <TouchableOpacity style={styles.filterBtn} onPress={() => { }}>
+              <Image
+                source={icons.filter}
+                resizeMode="contain"
+                style={styles.filterBtnImage}
 
-            />
-          </TouchableOpacity>
+              />
+            </TouchableOpacity>
+          </View>
         </View>
+        <FlatList data={job}
+          renderItem={({ item }) => (
+            <JobsCards item={item} />
+          )}
+          showsVerticalScrollIndicator={false}
+        />
       </View>
-
-
-      <FlatList data={course}
-        renderItem={({ item }) => (
-          <CourseCard item={item} />
-        )}
-        showsVerticalScrollIndicator={false}
-      />
-
-    </View>
+    </ScrollView>
 
   )
 }
+
 
 export default Jobs
