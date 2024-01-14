@@ -7,7 +7,7 @@ import { AirbnbRating } from 'react-native-ratings';
 const CourseCard = ({ item }) => {
 
     return (
-        <View >
+        <View>
             <TouchableOpacity style={[styles.container, styles.card]} onPress={() => { }}>
                 <Image source={{ uri: item.imageURL }} style={styles.cardImage} />
                 <View style={styles.infoContainer}>

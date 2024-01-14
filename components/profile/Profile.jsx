@@ -15,7 +15,7 @@ import styles from "./Profile.style";
 import { SIZES, icons } from "../../constants";
 import firestore from '@react-native-firebase/firestore';
 import PhoneInput from "react-native-phone-number-input";
-import { Dropdown } from "react-native-element-dropdown";
+
 
 const Profile = ({ navigation }) => {
     const [phoneNumber, setPhoneNumber] = useState('')
@@ -37,7 +37,6 @@ const Profile = ({ navigation }) => {
                         name="ios-arrow-back"
                         size={30}
                         onPress={() => navigation.navigate("Home")}
-
                     />
                     <Text style={styles.welcomeMessage}>Profile</Text>
                 </View>

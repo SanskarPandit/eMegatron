@@ -1,16 +1,19 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
-import styles from "../../cards/courses/CoursesCards.style"
+import styles from "../../cards/jobs/jobcard.style"
 import { AirbnbRating } from 'react-native-ratings';
-import { icons } from "../../../../constants";
+import { SIZES, icons } from "../../../../constants";
 
 const JobsCards = ({ item }) => {
   return (
     <View >
       <TouchableOpacity style={[styles.container, styles.card]} onPress={() => { }}>
-        <Image source={{ uri: item.imageURL }} style={styles.logoContainer} />
+        <View style={{ backgroundColor: "black", height: SIZES.xxLarge * 5, borderTopRightRadius: SIZES.xLarge, borderTopLeftRadius: SIZES.xLarge }}>
+
+          <Image source={{ uri: item.imageURL }} style={styles.logoContainer} />
+        </View>
         <View style={styles.infoContainer}>
           <Text style={styles.courseName}>{item.title}</Text>
-          <Text style={styles.courseName}>{item.place}</Text>
+          <Text style={styles.location}>{item.place}</Text>
 
           <View style={styles.infoWrapper}>
             <Text style={styles.price}>₹{item.price}</Text>

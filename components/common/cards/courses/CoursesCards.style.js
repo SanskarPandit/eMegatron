@@ -4,20 +4,12 @@ import { COLORS, FONT, SHADOWS, SIZES } from "../../../../constants";
 
 const styles = StyleSheet.create({
   container: {
-    width: 250,
     backgroundColor: "#FFFFFF",
     justifyContent: "space-between",
     ...SHADOWS.medium,
     shadowColor: COLORS.white,
   },
-  logoContainer: {
-    width: 50,
-    height: 50,
-    backgroundColor: "#FFF",
-    borderRadius: SIZES.medium,
-    justifyContent: "center",
-    alignItems: "center",
-  },
+
   logoImage: {
     width: "70%",
     height: "70%",
@@ -48,17 +40,12 @@ const styles = StyleSheet.create({
     fontFamily: FONT.bold,
     color: "#EF383D",
   },
-  location: {
-    fontSize: SIZES.medium - 2,
-    fontFamily: FONT.regular,
-    color: "#B3AEC6",
-  },
+
   card: {
     minHeight: 286,
     maxHeight: 280,
     minWidth: 250,
     margin: 15,
-
     borderColor: "#FFFFFF",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },

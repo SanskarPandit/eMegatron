@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     fontFamily: FONT.bold,
     fontSize: 30,
     marginTop: 2,
+    paddingLeft: SIZES.small,
   },
   searchContainer: {
     justifyContent: "center",

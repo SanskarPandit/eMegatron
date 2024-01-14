@@ -18,6 +18,7 @@ import CourseCard from "../../common/cards/courses/CoursesCard";
 
 import firestore from '@react-native-firebase/firestore';
 import JobsCards from "../../common/cards/jobs/JobsCards";
+
 const Welcome = ({ navigation }) => {
     const [loading, setLoading] = useState(true)
     const [activeCourse, setActiveCourse] = useState(0);
@@ -79,9 +80,7 @@ const Welcome = ({ navigation }) => {
     }
     return (
         <ScrollView>
-
             {activeCourse == 0 ? (
-
                 <View style={styles.body}>
                     <View style={styles.container}>
                         <Text style={styles.welcomeMessage}>Hi, Arjun A. Vyas</Text>
@@ -102,10 +101,11 @@ const Welcome = ({ navigation }) => {
                                 style={styles.searchInput}
                                 value=""
                                 onChange={() => { }}
+                                onPressIn={() => { navigation.navigate("CourseSearch") }}
                                 placeholder="What are you looking for?"
                             />
                         </View>
-                        <TouchableOpacity style={styles.filterBtn} onPress={() => { navigation.navigate("SignUp") }}>
+                        <TouchableOpacity style={styles.filterBtn} onPress={() => { navigation.navigate('Filter') }}>
                             <Image
                                 source={icons.filter}
                                 resizeMode="contain"
@@ -123,8 +123,6 @@ const Welcome = ({ navigation }) => {
                         <Text style={styles.description}>Today..!</Text>
                         <View style={styles.cardSlider}></View>
                     </View>
-
-
                     <View style={styles.menuSection}>
                         <View style={styles.menuTabsContainer}>
                             <TouchableOpacity
@@ -192,6 +190,7 @@ const Welcome = ({ navigation }) => {
                         </View>
                     </View>
                 </View>
+
             ) : ("")}
             {/* Jobs Section */}
 
@@ -217,7 +216,8 @@ const Welcome = ({ navigation }) => {
                                 style={jobStyle.searchInput}
                                 value=""
                                 onChange={() => { }}
-                                placeholder="What are you looking for?"
+                                placeholder="Position, Location or Keywords"
+                                onPressIn={() => { navigation.navigate("JobSearch") }}
                             />
                         </View>
                         <TouchableOpacity style={jobStyle.filterBtn} onPress={() => { }}>

@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { View, Text, ScrollView, SafeAreaView } from "react-native";
 import Ionic from "react-native-vector-icons/Ionicons";
-
-import { Welcome, Courses, Jobs } from "../components";
+import { Welcome, Courses, Jobs, Filter } from "../components";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
 import styles from "../styles/search";
 import Profile from "../components/profile/Profile";
 import SignUp from "../components/signUp/SignUp";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import App from "./App";
 
 const home = "Home";
 const myCourses = "My Courses";
@@ -16,6 +16,7 @@ const jobs = "Jobs";
 const profile = "Profile";
 const filter = "Filter";
 const Tab = createBottomTabNavigator();
+
 const Home = () => {
   return (
     <SafeAreaView style={styles.androidSafeArea}>
@@ -62,9 +63,8 @@ const Home = () => {
               headerShown: false,
             }}
             name={home}
-            component={Welcome}
+            component={App}
           />
-
           <Tab.Screen
             options={{
               headerShown: false, // Set headerShown to false to hide the header for this screen
@@ -87,17 +87,9 @@ const Home = () => {
             name={profile}
             component={Profile}
           />
-          <Tab.Screen
-            options={{
-              headerShown: false,
-            }}
-            name={"SignUp"}
-            component={SignUp}
-          />
         </Tab.Navigator>
       </NavigationContainer>
     </SafeAreaView>
   );
 };
-
 export default Home;
