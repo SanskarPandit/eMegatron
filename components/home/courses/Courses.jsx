@@ -39,7 +39,11 @@ const Courses = ({ navigation }) => {
     <ScrollView>
       <SafeAreaView>
 
-        <View style={{ padding: SIZES.medium, backgroundColor: "#FCF4F5" }}>
+        <View style={{
+          padding: SIZES.medium, backgroundColor: "#FCF4F5", display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}>
 
           <View style={styles.container}>
             <View style={{ display: 'flex', flexDirection: "row", alignContent: "space-between" }}>

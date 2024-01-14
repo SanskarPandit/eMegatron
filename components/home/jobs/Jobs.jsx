@@ -39,7 +39,11 @@ const Jobs = ({ navigation }) => {
   }
   return (
     <ScrollView>
-      <View style={{ padding: SIZES.medium, backgroundColor: "#F2F8FF" }}>
+      <View style={{
+        padding: SIZES.medium, backgroundColor: "#F2F8FF", display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}>
         <View style={styles.container}>
           <View style={{ display: 'flex', flexDirection: "row", alignContent: "space-between" }}>
 

@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
     color: "#202244",
     fontFamily: FONT.bold,
     fontSize: 30,
-    marginTop: 2,
+
+    paddingLeft: SIZES.small,
   },
   searchContainer: {
     justifyContent: "center",

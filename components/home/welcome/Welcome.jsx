@@ -18,6 +18,7 @@ import CourseCard from "../../common/cards/courses/CoursesCard";
 
 import firestore from '@react-native-firebase/firestore';
 import JobsCards from "../../common/cards/jobs/JobsCards";
+import { useNavigation } from "@react-navigation/native";
 
 const Welcome = ({ navigation }) => {
     const [loading, setLoading] = useState(true)
@@ -35,6 +36,8 @@ const Welcome = ({ navigation }) => {
     const [course, setCourse] = useState([]);
     const [activeCourseType, setActiveCourseType] = useState("All");
     // const router = useRouter();
+    const navigator = useNavigation()
+
     useEffect(() => {
         const subscriber = firestore()
             .collection('course_cards')
@@ -77,6 +80,9 @@ const Welcome = ({ navigation }) => {
     }, []);
     if (loading) {
         return <ActivityIndicator />;
+    }
+    const handleCoursePress = (itemID) => {
+        navigator.navigate()
     }
     return (
         <ScrollView>

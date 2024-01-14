@@ -3,7 +3,10 @@ import { StyleSheet } from "react-native";
 import { FONT, SIZES, COLORS } from "../../../constants";
 
 const styles = StyleSheet.create({
-  body: { padding: SIZES.medium, backgroundColor: "#F2F8FF" },
+  body: {
+    padding: SIZES.medium,
+    backgroundColor: "#F2F8FF",
+  },
   iconPadding: { paddingTop: 0.3 },
   container: {
     marginTop: SIZES.small,
@@ -30,7 +33,7 @@ const styles = StyleSheet.create({
     color: "#202244",
     fontFamily: FONT.bold,
     fontSize: 30,
-    marginTop: 2,
+
     paddingLeft: SIZES.small,
   },
   searchContainer: {
