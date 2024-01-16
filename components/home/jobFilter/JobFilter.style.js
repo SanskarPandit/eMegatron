@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import { COLORS, FONT, SIZES } from "../../../constants";
 
 const styles = StyleSheet.create({
-  body: { padding: SIZES.small, backgroundColor: "#FCF4F5" },
+  body: { padding: SIZES.small, backgroundColor: "#F2F8FF" },
   iconPadding: { paddingTop: 0.3 },
   container: {
     marginTop: SIZES.large,
@@ -17,8 +17,10 @@ const styles = StyleSheet.create({
 
   userName: {
     fontFamily: FONT.regular,
-    fontSize: SIZES.large,
-    color: COLORS.secondary,
+    fontSize: SIZES.large - 1,
+    color: COLORS.gray2,
+    marginTop: SIZES.xSmall,
+    alignItems: "flex-end",
   },
   welcomeText: {
     fontSize: 15,
@@ -32,13 +34,15 @@ const styles = StyleSheet.create({
     fontSize: 30,
     marginTop: 2,
     marginLeft: SIZES.small,
+    width: "75%",
   },
   category: {
     color: "#202244",
     fontFamily: FONT.bold,
     fontSize: SIZES.large + 2,
     marginTop: 2,
-    marginLeft: SIZES.xSmall,
+    marginLeft: SIZES.xSmall - 3,
+    marginBottom: SIZES.small,
   },
   searchContainer: {
     justifyContent: "center",
@@ -142,7 +146,7 @@ const styles = StyleSheet.create({
 
   filterBtn: {
     width: "80%",
-    backgroundColor: "#EF383D",
+    backgroundColor: "#007AFF",
     borderRadius: SIZES.large,
     justifyContent: "center",
     alignItems: "center",

@@ -111,7 +111,7 @@ const Welcome = ({ navigation }) => {
                                 placeholder="What are you looking for?"
                             />
                         </View>
-                        <TouchableOpacity style={styles.filterBtn} onPress={() => { navigation.navigate('Filter') }}>
+                        <TouchableOpacity style={styles.filterBtn} onPress={() => { navigation.navigate('CourseFilter') }}>
                             <Image
                                 source={icons.filter}
                                 resizeMode="contain"
@@ -226,7 +226,7 @@ const Welcome = ({ navigation }) => {
                                 onPressIn={() => { navigation.navigate("JobSearch") }}
                             />
                         </View>
-                        <TouchableOpacity style={jobStyle.filterBtn} onPress={() => { }}>
+                        <TouchableOpacity style={jobStyle.filterBtn} onPress={() => { navigation.navigate('JobFilter') }}>
                             <Image
                                 source={icons.filter}
                                 resizeMode="contain"

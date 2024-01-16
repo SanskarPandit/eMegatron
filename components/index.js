@@ -15,10 +15,11 @@ import Specifics from "./jobdetails/specifics/Specifics";
 import JobsCards from "./common/cards/jobs/JobsCards";
 import CourseCard from "./common/cards/courses/CoursesCard";
 import Home from "../app";
-import Filter from "./home/filter/Filter";
 
 import CourseSearch from "../components/common/search/courseSearch/CourseSearch";
 import JobSearch from "../components/common/search/jobSearch/JobSearch";
+import CourseFilter from "./home/courseFilter/CourseFilter";
+import JobFilter from "./home/jobFilter/JobFilter";
 
 export {
   Home,
@@ -33,7 +34,8 @@ export {
   JobsCards,
   CourseCard,
   Welcome,
-  Filter,
   CourseSearch,
   JobSearch,
+  CourseFilter,
+  JobFilter,
 };

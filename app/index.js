@@ -6,8 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import styles from "../styles/search";
 import Profile from "../components/profile/Profile";
-import SignUp from "../components/signUp/SignUp";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
 import App from "./App";
 
 const home = "Home";
