@@ -74,7 +74,6 @@ const CourseSearch = ({ navigation }) => {
 
                 <FlatList
                     data={lists}
-                    keyExtractor={lists.id}
                     renderItem={({ item }) => (
                         <View>
                             {item.isVisible && (

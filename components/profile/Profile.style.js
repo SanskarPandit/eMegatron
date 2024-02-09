@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 import { COLORS, FONT, SIZES } from "../../constants";
 
 const styles = StyleSheet.create({
-  body: { padding: SIZES.large, backgroundColor: "#FCF4F5" },
+  body: { padding: SIZES.large, backgroundColor: "#FCF4F5", paddingTop: 32 },
   iconPadding: { paddingTop: 0.3 },
   container: {
     marginTop: SIZES.large,

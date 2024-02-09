@@ -77,7 +77,8 @@ const JobSearch = ({ navigation }) => {
 
                 <FlatList
                     data={lists}
-                    keyExtractor={lists.id}
+                    keyExtractor={(id) => id}
+
                     renderItem={({ item }) => (
                         <View >
                             {item.isVisible && (

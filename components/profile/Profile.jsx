@@ -44,7 +44,7 @@ const Profile = ({ navigation }) => {
                 </View>
                 <View style={styles.container}>
                     <View style={{ alignItems: 'center' }}>
-                        <Image source={{ uri: profile.imageURL }} style={{ width: 110, height: 110, borderRadius: 100, borderColor: "#167F71", borderWidth: 4 }} />
+                        <Image source={{}} style={{ width: 110, height: 110, borderRadius: 100, borderColor: "#167F71", borderWidth: 4, backgroundColor: "white" }} />
                     </View>
                     <View style={{ marginTop: SIZES.medium }}>
                         <View style={styles.searchContainer}>
@@ -61,7 +61,6 @@ const Profile = ({ navigation }) => {
                         </View>
                         <View style={styles.searchContainer}>
                             <View style={styles.searchWrapper}>
-
                                 <TextInput
                                     style={styles.searchInput}
                                     value=""

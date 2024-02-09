@@ -1,30 +1,66 @@
 import { StyleSheet } from "react-native";
 
-import { COLORS, FONT, SIZES } from "../../../constants";
+import { FONT, SIZES, COLORS } from "../../../constants";
 
 const styles = StyleSheet.create({
+  body: {
+    padding: SIZES.medium,
+    backgroundColor: "red",
+  },
+  iconPadding: { paddingTop: 0.3 },
   container: {
-    marginTop: SIZES.xLarge,
-  },
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
     marginTop: SIZES.small,
+    width: "100%",
   },
-  headerTitle: {
-    fontSize: SIZES.large,
-    fontFamily: FONT.medium,
-    color: COLORS.primary,
-  },
-  headerBtn: {
+  description: {
+    fontFamily: FONT.regular,
     fontSize: SIZES.medium,
-    fontFamily: FONT.medium,
-    color: COLORS.gray,
+    color: "#fff",
   },
-  cardsContainer: {
-    marginTop: SIZES.medium,
-    gap: SIZES.small,
+
+  userName: {
+    fontFamily: FONT.regular,
+    fontSize: SIZES.large,
+    color: COLORS.secondary,
+  },
+  welcomeText: {
+    fontSize: 15,
+    marginTop: 9,
+    color: "#545454",
+    fontFamily: FONT.medium,
+  },
+  welcomeMessage: {
+    color: "#202244",
+    fontFamily: FONT.bold,
+    fontSize: 30,
+
+    paddingLeft: SIZES.small,
+  },
+  searchContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    marginTop: SIZES.large,
+    height: 50,
+  },
+  searchWrapper: {
+    flex: 1,
+    backgroundColor: "white",
+    marginRight: SIZES.small,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: SIZES.medium,
+    height: "100%",
+  },
+  searchInput: {
+    fontSize: SIZES.medium,
+    flex: 1,
+    fontFamily: FONT.medium,
+    width: "100%",
+    height: "100%",
+    paddingHorizontal: SIZES.xxLarge,
+    bottom: "20%",
+    left: "3%",
   },
   filterBtn: {
     width: 45,
@@ -41,7 +77,7 @@ const styles = StyleSheet.create({
     right: "44%",
     top: "30%",
   },
-  JobOfferCard: {
+  offerCard: {
     alignItems: "center",
     justifyContent: "center",
     marginTop: 25,
@@ -69,11 +105,6 @@ const styles = StyleSheet.create({
     height: 30,
     tintColor: COLORS.white,
   },
-  tabsContainer: {
-    width: "100%",
-    marginTop: SIZES.medium,
-    flexDirection: "row",
-  },
   cardSlider: {
     flexDirection: "row",
     marginTop: SIZES.xLarge,
@@ -83,15 +114,73 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginBottom: 5,
   },
-  menuSection: {
+  menuTabsContainer: {
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 39,
+    width: "100%",
+    marginTop: SIZES.medium,
+    flexDirection: "row",
+  },
+  menuSection: {
+    marginTop: SIZES.xxLarge,
+    marginBottom: SIZES.large,
     backgroundColor: "#ffff",
-    padding: 13,
-    borderRadius: 20,
+    padding: SIZES.xLarge,
+    borderRadius: SIZES.medium,
     width: "100%",
     paddingTop: 0.5,
+  },
+  menutab: (activeStatus) => ({
+    paddingVertical: SIZES.small / 2,
+    paddingHorizontal: SIZES.xxLarge,
+    borderRadius: 10,
+    borderBottomWidth: activeStatus === 0 ? 1 : 0,
+    borderColor: activeStatus === 0 ? "#167F71" : COLORS.gray2,
+  }),
+  menutabText: (activeStatus) => ({
+    fontFamily: FONT.bold,
+    fontSize: SIZES.large,
+    color: activeStatus === 0 ? "#167F71" : COLORS.gray2,
+  }),
+
+  tabsContainer: {
+    width: "100%",
+    marginTop: SIZES.medium,
+  },
+  tab: (activeJobType, item) => ({
+    paddingVertical: SIZES.small / 2,
+    paddingHorizontal: SIZES.medium,
+    borderRadius: SIZES.medium,
+    borderWidth: 1,
+    backgroundColor: activeJobType === item ? "#167F71" : "#F2F8FF",
+    borderColor: activeJobType === item ? "#167F71" : "#F2F8FF",
+  }),
+  tabText: (activeJobType, item) => ({
+    fontFamily: FONT.medium,
+    color: activeJobType === item ? "#FFFFFF" : "#000",
+  }),
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  headerTitle: {
+    fontSize: SIZES.xLarge,
+    fontFamily: FONT.medium,
+    color: COLORS.primary,
+  },
+  headerBtn: {
+    fontSize: 15,
+    fontFamily: FONT.medium,
+    color: "#007AFF",
+  },
+  cardsContainer: {
+    marginTop: SIZES.medium,
+  },
+  heading: {
+    fontSize: 20,
+    fontFamily: FONT.medium,
+    color: COLORS.primary,
   },
 });
 

@@ -13,6 +13,7 @@ import Circle from "../assets/icons/Circle.png";
 import Amazon from "../assets/icons/amazon.png";
 import Calendar from "../assets/icons/calendar.png";
 import Email from "../assets/icons/email.png";
+import JobCircle from "../assets/icons/JobCircle.png";
 export default {
   heart,
   menu,
@@ -29,4 +30,5 @@ export default {
   Amazon,
   Calendar,
   Email,
+  JobCircle,
 };

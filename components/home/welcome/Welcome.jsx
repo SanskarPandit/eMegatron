@@ -33,7 +33,7 @@ const Welcome = ({ navigation }) => {
     const jobType = ["All", "Building Contrator", "CCTV Engineer", "Civil Contractor"];
     const [job, setJob] = useState([]);
     const [activeJobType, setActiveJobType] = useState("All");
-    const [course, setCourse] = useState([]);
+    const [course, setCourse] = useState();
     const [activeCourseType, setActiveCourseType] = useState("All");
     // const router = useRouter();
     const navigator = useNavigation()
@@ -85,7 +85,7 @@ const Welcome = ({ navigation }) => {
         navigator.navigate()
     }
     return (
-        <ScrollView>
+        <ScrollView >
             {activeCourse == 0 ? (
                 <View style={styles.body}>
                     <View style={styles.container}>
@@ -178,7 +178,7 @@ const Welcome = ({ navigation }) => {
                                             </Text>
                                         </TouchableOpacity>
                                     )}
-                                    keyExtractor={(item) => item}
+
                                     contentContainerStyle={{ columnGap: SIZES.xSmall }}
                                     horizontal
                                     showsHorizontalScrollIndicator={false}
@@ -295,7 +295,7 @@ const Welcome = ({ navigation }) => {
                                             </Text>
                                         </TouchableOpacity>
                                     )}
-                                    keyExtractor={(item) => item}
+
                                     contentContainerStyle={{ columnGap: SIZES.xSmall }}
                                     horizontal
                                     showsHorizontalScrollIndicator={false}
@@ -309,6 +309,7 @@ const Welcome = ({ navigation }) => {
                                 )}
                                 showsHorizontalScrollIndicator={false}
                                 horizontal
+
                             />
                         </View>
                     </View>

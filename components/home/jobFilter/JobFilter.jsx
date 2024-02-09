@@ -445,7 +445,7 @@ const JobFilter = ({ navigation }) => {
 
                             <Text style={styles.updateText}>Apply</Text>
                             <Image
-                                source={icons.Circle}
+                                source={icons.JobCircle}
                                 resizeMode="contain"
                                 style={styles.filterBtnImage}
                             />

@@ -1,11 +1,8 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import styles from "./CoursesCards.style"
 import { AirbnbRating } from 'react-native-ratings';
-
 // const navigate = useNavigation()
-
 const CourseCard = ({ item }) => {
-
     return (
         <View>
             <TouchableOpacity style={[styles.container, styles.card]} onPress={() => { }}>
@@ -29,5 +26,4 @@ const CourseCard = ({ item }) => {
         </View>
     );
 };
-
 export default CourseCard

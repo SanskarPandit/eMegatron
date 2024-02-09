@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
     color: "#202244",
   },
   infoContainer: {
-    // marginTop: SIZES.xSmall,
     padding: SIZES.small,
     marginHorizontal: SIZES.xSmall - 4,
   },
@@ -38,7 +37,7 @@ const styles = StyleSheet.create({
     fontSize: SIZES.large,
     fontFamily: FONT.medium,
     color: "#FF6B00",
-    marginBottom: SIZES.small,
+    marginBottom: SIZES.xSmall - 2,
   },
   infoWrapper: {
     flexDirection: "row",
